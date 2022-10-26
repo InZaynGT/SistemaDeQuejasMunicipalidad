@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuejasUsuario">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="59dp"
+        android:layout_height="46dp"
+        android:src="@drawable/eliminar"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="59dp"
+        android:layout_height="46dp"
+        android:src="@drawable/actualizar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <Button
+        android:id="@+id/buttonNuevaQueja"
+        android:layout_width="205dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#009688"
+        android:drawableLeft="@drawable/nueva_ventana"
+        android:text=" Nueva Queja"
+        android:textColor="#F8F5F5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="59dp"
+        android:background="#009688"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewTitulo2"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="INICIO"
+            android:textColor="#F8F5F5"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
