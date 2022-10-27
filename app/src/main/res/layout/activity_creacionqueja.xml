@@ -7,7 +7,7 @@
     tools:context=".creacionqueja">
 
     <Button
-        android:id="@+id/buttonNuevaQueja2"
+        android:id="@+id/buttonCrearQueja"
         android:layout_width="209dp"
         android:layout_height="78dp"
         android:backgroundTint="#009688"
@@ -16,6 +16,7 @@
         android:textColor="#F8F5F5"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:onClick="regresarQuejas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
@@ -122,12 +123,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textViewTitulo1"
+        <Button
+            android:id="@+id/ButtonRegresar"
             android:layout_width="44dp"
             android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            android:drawableLeft="@drawable/regresar"
             android:gravity="center"
-            android:text="<"
+            android:onClick="regresarQuejas"
             android:textColor="#F8F5F5"
             android:textSize="40sp"
             android:textStyle="bold" />
