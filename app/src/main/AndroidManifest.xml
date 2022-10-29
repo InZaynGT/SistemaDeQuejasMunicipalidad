@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.proyectofinalanalisis">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+
+        android:networkSecurityConfig="@xml/security_config"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyectofinalanalisis"
         tools:targetApi="31">
+
+
+
         <activity
             android:name=".creacionqueja"
             android:exported="false">
@@ -39,6 +47,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
