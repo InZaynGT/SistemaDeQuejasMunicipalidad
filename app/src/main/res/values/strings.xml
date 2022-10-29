@@ -6,4 +6,13 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="ordenQueja">
+        <item>EN PROCESO</item>//En proceso
+        <item>COMPLETADO</item>//completado
+        <item>CANCELADO</item>//Cancelada
+    </string-array>
+
+
+
+
 </resources>

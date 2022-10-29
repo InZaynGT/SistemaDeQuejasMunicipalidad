@@ -43,7 +43,7 @@ public class creacionqueja extends AppCompatActivity {
         btnCrearQueja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ejecutarServicio("http://192.168.1.7/ANALISIS_BackendPHP/crearQueja.php");
+                ejecutarServicio("http://10.0.2.2/ANALISIS_BackendPHP/crearQueja.php");
             }
         });
 
