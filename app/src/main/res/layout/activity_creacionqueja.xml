@@ -7,32 +7,31 @@
     tools:context=".creacionqueja">
 
     <Button
-        android:id="@+id/buttonCrearQueja"
+        android:id="@+id/btnCrearQueja"
         android:layout_width="209dp"
         android:layout_height="78dp"
         android:backgroundTint="#009688"
         android:drawableLeft="@drawable/agregar"
+        android:onClick="regresarQuejas"
         android:text=" Enviar"
         android:textColor="#F8F5F5"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:onClick="regresarQuejas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.888" />
 
     <EditText
-        android:id="@+id/editTextTextUsuario4"
+        android:id="@+id/edTextDescripcion"
         android:layout_width="332dp"
         android:layout_height="95dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="180dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -40,24 +39,24 @@
         android:id="@+id/textViewCategoria3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="292dp"
         android:text="Imagen (Opcional)"
         android:textColor="#808080"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <EditText
-        android:id="@+id/editTextTextUsuario2"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="104dp"
+        android:id="@+id/edTextUrl"
+        android:layout_width="328dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="328dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -65,38 +64,24 @@
         android:id="@+id/textViewCategoria2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
         android:text="Descripción"
         android:textColor="#808080"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        tools:layout_editor_absoluteY="208dp" />
 
     <TextView
         android:id="@+id/textViewCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="80dp"
         android:text="Categoría"
         android:textColor="#808080"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Título"
-        android:textColor="#808080"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -104,7 +89,7 @@
         android:id="@+id/textViewLeyenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="Llenar el formulario con la información solicitada"
         android:textColor="#121111"
         android:textSize="18dp"
@@ -148,13 +133,15 @@
     </LinearLayout>
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinCategoria"
         android:layout_width="331dp"
         android:layout_height="33dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextUsuario4"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toTopOf="@+id/edTextDescripcion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsuario2" />
+        android:entries="@array/numCategoria" />/>
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -163,10 +150,10 @@
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsuario4"
-        app:layout_constraintVertical_bias="0.253"
+        app:layout_constraintTop_toBottomOf="@+id/edTextDescripcion"
+        app:layout_constraintVertical_bias="0.329"
         app:srcCompat="@drawable/imagen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

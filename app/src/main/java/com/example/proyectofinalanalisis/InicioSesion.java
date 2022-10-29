@@ -23,19 +23,24 @@ import java.util.Map;
 
 public class InicioSesion extends AppCompatActivity {
 
+    private static InicioSesion _instance = null;
+
     EditText correo, contrasena;
 
-    String str_email,str_password;
+    String str_email,str_password, respuesta;
     String urlCrearUsuario = "",
-            urlIniciarSesion = "http://10.0.2.2/ANALISIS_BackendPHP/iniciarSesion.php",
+            urlIniciarSesion = "http://192.168.1.7/ANALISIS_BackendPHP/iniciarSesion.php",
             ulrCrearQueja ="",
             urlAtenderQueja = "",
             ulrListarQuejas = "";
     Button btnLogin;
+    int comparador=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciosesion);
+
+        InicioSesion._instance = this;
 
         correo = findViewById(R.id.editTextTextUsuario);
         contrasena = findViewById(R.id.editTextTextPasswordUsuario);
@@ -44,13 +49,16 @@ public class InicioSesion extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Login(urlIniciarSesion);
+                Login(v);
             }
         });
     }
 
+    public static InicioSesion getInstance() {
+        return _instance;
+    }
 
-    public void Login(String url) {
+    public void Login(View v) {
 
         if(correo.getText().toString().equals("")){
             Toast.makeText(this, "Ingrese Email", Toast.LENGTH_SHORT).show();
@@ -69,22 +77,22 @@ public class InicioSesion extends AppCompatActivity {
             str_email = correo.getText().toString().trim();
             str_password = contrasena.getText().toString().trim();
 
-
-            StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            StringRequest request = new StringRequest(Request.Method.POST, urlIniciarSesion, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     progressDialog.dismiss();
-
-                    if(response.equalsIgnoreCase("Ingreso exitoso")){
-
-                        correo.setText("");
-                        contrasena.setText("");
-                        startActivity(new Intent(getApplicationContext(),creacionqueja.class));
-                        Toast.makeText(InicioSesion.this, response, Toast.LENGTH_SHORT).show();
+                    respuesta = response;
+                    /*
+                    if(!respuesta.equals("exitoso")){
+                        Toast.makeText(InicioSesion.this, "NoFuncionaIF "+response+comparador, Toast.LENGTH_SHORT).show();
                     }
-                    else{
-                        Toast.makeText(InicioSesion.this, response, Toast.LENGTH_SHORT).show();
+                    */
+                    if(!respuesta.equals("fallido")){
+                        comparador=1;
+                        Toast.makeText(InicioSesion.this, "Ingreso "+response, Toast.LENGTH_SHORT).show();
                     }
+
+
 
                 }
             },new Response.ErrorListener(){
@@ -92,7 +100,7 @@ public class InicioSesion extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     progressDialog.dismiss();
-                    Toast.makeText(InicioSesion.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InicioSesion.this, error.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -110,9 +118,15 @@ public class InicioSesion extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(InicioSesion.this);
             requestQueue.add(request);
 
-
-
-
+        }
+        if(comparador==1){
+            Intent i = new Intent(new Intent(getInstance(),QuejasUsuario.class));
+            startActivityForResult(i, 0);
+            correo.setText("");
+            contrasena.setText("");
+            InicioSesion.this.recreate();
+        } else{
+            Toast.makeText(InicioSesion.this, "Ingreso"+respuesta, Toast.LENGTH_SHORT).show();
         }
     }
 
