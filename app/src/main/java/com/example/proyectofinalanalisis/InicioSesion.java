@@ -44,13 +44,19 @@ public class InicioSesion extends AppCompatActivity {
         correo = findViewById(R.id.editTextTextUsuario);
         contrasena = findViewById(R.id.editTextTextPasswordUsuario);
         btnLogin = (Button) findViewById(R.id.buttonIniciarSesion);
-
+        Button btnRegistro = findViewById(R.id.textViewRegistrarse);
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Login(v);
             }
         });
+
+        btnRegistro.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Registro.class);
+            startActivity(intent);
+        });
+
     }
 
     public static InicioSesion getInstance() {
@@ -129,14 +135,14 @@ public class InicioSesion extends AppCompatActivity {
         }
     }
 
-    public void irARegistro(View v){
-        TextView info = findViewById(R.id.textViewRegistrarse);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), Registro.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-    }
+//    public void irARegistro(View v){
+//        TextView info = findViewById(R.id.textViewRegistrarse);
+//        info.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent (v.getContext(), Registro.class);
+//                startActivityForResult(intent, 0);
+//            }
+//        });
+//    }
 }
