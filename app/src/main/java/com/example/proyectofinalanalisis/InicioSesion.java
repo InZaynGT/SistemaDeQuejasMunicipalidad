@@ -27,7 +27,7 @@ public class InicioSesion extends AppCompatActivity {
 
     String str_email,str_password;
     String urlCrearUsuario = "",
-           urlIniciarSesion = "http://10.0.2.2/ANALISIS_BackendPHP/iniciarSesion.php",
+           urlIniciarSesion = "127.0.0.1:3036/ProyectoAnalisis/iniciarSesion.php",
            ulrCrearQueja ="",
            urlAtenderQueja = "",
            ulrListarQuejas = "";
@@ -75,7 +75,7 @@ public class InicioSesion extends AppCompatActivity {
                 public void onResponse(String response) {
                     progressDialog.dismiss();
 
-                    if(response.equalsIgnoreCase("Ingreso exitoso")){
+                    if(response.equalsIgnoreCase("Ingreso correctamente")){
 
                         correo.setText("");
                         contrasena.setText("");
