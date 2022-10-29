@@ -30,7 +30,6 @@ public class InicioSesion extends AppCompatActivity {
     String str_email,str_password, respuesta;
     String urlCrearUsuario = "",
             urlIniciarSesion = "http://192.168.1.7/ANALISIS_BackendPHP/iniciarSesion.php",
-            ulrCrearQueja ="",
             urlAtenderQueja = "",
             ulrListarQuejas = "";
     Button btnLogin;
