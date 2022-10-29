@@ -100,8 +100,8 @@ public class InicioSesion extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> params = new HashMap<String, String>();
-                    params.put("email",str_email);
-                    params.put("password",str_password);
+                    params.put("correo",str_email);
+                    params.put("contrasena",str_password);
                     return params;
 
                 }
