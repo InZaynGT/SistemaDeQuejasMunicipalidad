@@ -24,32 +24,39 @@
 
             <ImageView
                 android:id="@+id/imageView7"
+                android:layout_width="88dp"
+                android:layout_height="78dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:layout_width="85dp"
-                android:layout_height="66dp"
                 app:srcCompat="@android:drawable/checkbox_on_background" />
 
             <TextView
                 android:id="@+id/textDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textFecha"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="11dp"
                 android:text="Descripcion" />
 
             <TextView
                 android:id="@+id/textEstado"
-                android:layout_marginStart="300dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="139dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/textCategoria"
                 android:text="Estado" />
 
             <TextView
                 android:id="@+id/textFecha"
-                android:layout_marginStart="200dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textCategoria"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_toEndOf="@+id/imageView7"
                 android:text="Fecha" />
 
             <TextView
