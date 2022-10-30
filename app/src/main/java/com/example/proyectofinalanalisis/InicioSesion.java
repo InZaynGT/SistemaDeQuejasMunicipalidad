@@ -29,7 +29,7 @@ public class InicioSesion extends AppCompatActivity {
 
     String str_email,str_password, respuesta;
     String urlCrearUsuario = "",
-            urlIniciarSesion = "http://10.0.2.2/ANALISIS_BackendPHP/iniciarSesion.php",
+            urlIniciarSesion = "http://192.168.1.7/ANALISIS_BackendPHP/iniciarSesion.php",
             urlAtenderQueja = "",
             ulrListarQuejas = "";
     Button btnLogin;
@@ -74,10 +74,10 @@ public class InicioSesion extends AppCompatActivity {
         else{
 
 
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Por favor espera...");
+            //final ProgressDialog progressDialog = new ProgressDialog(this);
+            //progressDialog.setMessage("Por favor espera...");
 
-            progressDialog.show();
+            //progressDialog.show();
 
             str_email = correo.getText().toString().trim();
             str_password = contrasena.getText().toString().trim();
@@ -85,7 +85,7 @@ public class InicioSesion extends AppCompatActivity {
             StringRequest request = new StringRequest(Request.Method.POST, urlIniciarSesion, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    progressDialog.dismiss();
+                    //progressDialog.dismiss();
                     respuesta = response;
                     /*
                     if(!respuesta.equals("exitoso")){
@@ -104,7 +104,7 @@ public class InicioSesion extends AppCompatActivity {
 
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    progressDialog.dismiss();
+                    //progressDialog.dismiss();
                     Toast.makeText(InicioSesion.this, error.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
