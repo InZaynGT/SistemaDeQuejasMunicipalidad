@@ -71,7 +71,7 @@ public class creacionqueja extends AppCompatActivity {
         btnCrearQueja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ejecutarServicio("http://192.168.1.7/ANALISIS_BackendPHP/crearQueja.php");
+                ejecutarServicio("http://10.0.2.2/ANALISIS_BackendPHP/crearQueja.php");
 
                 String descripcionPdf = edTextDescripcion.getText().toString();
                 String imagenPdf = edTextUrl.getText().toString();
@@ -173,6 +173,8 @@ public class creacionqueja extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Exito: " + response, Toast.LENGTH_SHORT).show();
+                edTextDescripcion.setText("");
+                edTextUrl.setText("");
 
             }
         }, new Response.ErrorListener() {

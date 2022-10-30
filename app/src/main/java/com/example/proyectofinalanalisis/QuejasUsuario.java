@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuejasUsuario extends AppCompatActivity {
-    private static final String URL ="http://192.168.1.7/ANALISIS_BackendPHP/listarQuejas.php";
+    private static final String URL ="http://10.0.2.2/ANALISIS_BackendPHP/listarQuejas.php";
     Button button;
     List<Quejas> listaQuejas;
 
@@ -36,7 +36,9 @@ public class QuejasUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quejas_usuario);
         Button button = findViewById(R.id.buttonNuevaQueja);
-        Button actualizar = findViewById(R.id.ButtonSalir);
+        Button btnSalir = findViewById(R.id.ButtonSalir);
+
+
 
         recyclerView=(RecyclerView)findViewById(R.id.Recycler);
         recyclerView.setHasFixedSize(true);
@@ -46,13 +48,19 @@ public class QuejasUsuario extends AppCompatActivity {
 
         loadquejas();
 
+        btnSalir.setOnClickListener(view -> {
+            Intent intent = new Intent(this, InicioSesion.class);
+            startActivity(intent);
+        });
+
         button.setOnClickListener(view -> {
          Intent intent = new Intent(this, creacionqueja.class);
          startActivity(intent);
         });
-        actualizar.setOnClickListener(view -> {
-            loadquejas();
-        });
+
+//        actualizar.setOnClickListener(view -> {
+//            loadquejas();
+//        });
 
     }
 

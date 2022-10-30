@@ -55,7 +55,7 @@
         android:id="@+id/textViewUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario"
+        android:text="Correo"
         android:textColor="#121111"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextUsuario"
         app:layout_constraintEnd_toEndOf="parent"

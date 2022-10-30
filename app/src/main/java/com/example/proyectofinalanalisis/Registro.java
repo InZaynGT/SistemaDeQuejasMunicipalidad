@@ -1,6 +1,8 @@
 package com.example.proyectofinalanalisis;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +40,7 @@ public class Registro extends AppCompatActivity {
         crearUsuario.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                procesarRegistro("http://192.168.1.7/ANALISIS_BackendPHP/crearUsuario.php");
+                procesarRegistro("http://10.0.2.2/ANALISIS_BackendPHP/crearUsuario.php");
             }
         });
     }
@@ -66,6 +68,12 @@ public class Registro extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Exito: "+response, Toast.LENGTH_SHORT).show();
+                    apellidos.setText("");
+                    nombre.setText("");
+                    dpi.setText("");
+                    correo.setText("");
+                    contrasena.setText("");
+
 
                 }
             }, new Response.ErrorListener() {
