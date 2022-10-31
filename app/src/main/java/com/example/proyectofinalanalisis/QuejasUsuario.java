@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuejasUsuario extends AppCompatActivity {
-    private static final String URL ="http://10.0.2.2/ANALISIS_BackendPHP/listarQuejas.php";
+    private static final String URL ="http://192.168.1.7/ANALISIS_BackendPHP/listarQuejas.php";
     Button button;
     List<Quejas> listaQuejas;
 
